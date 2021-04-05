@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { StudentAllComponent } from './student-all/student-all.component';
+import { StudentCreateComponent } from './student-create/student-create.component';
+import { StudentEditComponent } from './student-edit/student-edit.component';
+
+
+const routes: Routes = [
+  { path: 'all', component: StudentAllComponent },
+  { path: 'add', component: StudentCreateComponent },
+  { path: 'edit/:id', component: StudentEditComponent },
+  { path: '', redirectTo: 'add', pathMatch: 'full' },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
